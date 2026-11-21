@@ -1,0 +1,6 @@
+- id: shipping
+  title: Shipping
+  order: 1
+- id: docs
+  title: Docs
+  order: 2

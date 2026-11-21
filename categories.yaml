@@ -1,0 +1,10 @@
+# The groups on the Browse page, in this order. A plugin's `category:` must be one of these ids.
+- id: feedback-testing
+  title: Feedback and testing
+  order: 1
+- id: shipping
+  title: Shipping
+  order: 2
+- id: docs
+  title: Docs
+  order: 3

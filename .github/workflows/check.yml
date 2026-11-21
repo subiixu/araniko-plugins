@@ -1,0 +1,85 @@
+# Checks every pull request that adds, changes or removes a plugins/<name>.yaml entry.
+#
+# Runs on pull_request_target so it can comment on pull requests from forks.
+# It checks out main (never the pull request's code) and reads the changed
+# entry files from the pull request as data with `git show`. The plugin itself
+# is downloaded from GitHub at the pinned commit and only read by
+# `araniko plugin check`; nothing from the pull request or the plugin is run.
+name: Check plugin
+
+on:
+  pull_request_target:
+    paths:
+      - "plugins/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out main (not the pull request)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Fetch the pull request's entries as data
+        env:
+          PR: ${{ github.event.pull_request.number }}
+        run: git fetch --no-tags origin "refs/pull/${PR}/head:pr-head"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # There is no CLI-only download in subiixu/araniko-releases. The `araniko`
+      # command ships inside the app bundle (Araniko.app/Contents/MacOS/araniko),
+      # so this takes it from the latest Araniko.app.tar.gz.
+      # NEEDS ATTENTION: `araniko plugin check` must be in a released build for
+      # this step to pass; until then the comment says the check didn't run.
+      - name: Get the araniko command from the latest release
+        id: cli
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/araniko"
+          if gh release download -R subiixu/araniko-releases -p 'Araniko.app.tar.gz' -D "$RUNNER_TEMP/araniko" \
+             && tar -xzf "$RUNNER_TEMP/araniko/Araniko.app.tar.gz" -C "$RUNNER_TEMP/araniko" \
+             && "$RUNNER_TEMP/araniko/Araniko.app/Contents/MacOS/araniko" plugin check --help >/dev/null 2>&1; then
+            echo "path=$RUNNER_TEMP/araniko/Araniko.app/Contents/MacOS/araniko" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::araniko plugin check isn't in the latest release yet"
+          fi
+
+      - name: Check the changed entries
+        id: check
+        env:
+          ARANIKO: ${{ steps.cli.outputs.path }}
+        run: |
+          set +e
+          python3 -I scripts/pr_check.py --base "${{ github.event.pull_request.base.sha }}" --head pr-head \
+            ${ARANIKO:+--araniko "$ARANIKO"} --comment "$RUNNER_TEMP/comment.md"
+          echo "status=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Comment on the pull request
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          [ -f "$RUNNER_TEMP/comment.md" ] || exit 0
+          gh pr comment "$PR" -R "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/comment.md" --edit-last 2>/dev/null \
+            || gh pr comment "$PR" -R "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/comment.md"
+
+      - name: Fail if the check failed
+        if: steps.check.outputs.status != '0'
+        run: exit 1

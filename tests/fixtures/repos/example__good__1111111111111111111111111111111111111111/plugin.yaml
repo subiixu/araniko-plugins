@@ -1,0 +1,15 @@
+name: good-one
+title: Good one
+summary: "A test plugin: it does nothing"   # quoted because of the colon
+author: Test
+version: 0.1.0
+icon: CheckmarkSquare02Icon
+category: shipping
+needs:
+  connections: [github]
+settings:
+  - key: tone
+    label: Tone
+    type: choice
+    options: [Plain, 'Friendly']
+    default: Plain

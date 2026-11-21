@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "generated_at": 1795305600,
+  "categories": [
+    {
+      "id": "feedback-testing",
+      "title": "Feedback and testing",
+      "order": 1
+    },
+    {
+      "id": "shipping",
+      "title": "Shipping",
+      "order": 2
+    },
+    {
+      "id": "docs",
+      "title": "Docs",
+      "order": 3
+    }
+  ],
+  "plugins": [
+    {
+      "name": "analytics-starter",
+      "title": "Analytics starter",
+      "summary": "Adds simple visit and sign-up counts to your app",
+      "author": "Sample Dev",
+      "version": "0.1.0",
+      "icon": "Analytics02Icon",
+      "category": "shipping",
+      "settings": [
+        {
+          "key": "site_id",
+          "label": "Site ID",
+          "type": "text"
+        },
+        {
+          "key": "api_key",
+          "label": "API key",
+          "type": "secret"
+        }
+      ],
+      "screens": [
+        {
+          "id": "counts",
+          "place": "project-tab",
+          "title": "Visits",
+          "icon": "Analytics02Icon",
+          "entry": "screens/counts/index.html"
+        }
+      ],
+      "can": {
+        "storage": true,
+        "reach": [
+          "api.example-analytics.com"
+        ]
+      },
+      "repo": "sample-dev/analytics-starter",
+      "commit": "bcc899d5e30c706c186474d1e29da1aa00007368",
+      "path": "."
+    },
+    {
+      "name": "api-reference",
+      "title": "API reference",
+      "summary": "Keeps a reference page for every endpoint up to date",
+      "author": "Sample Dev",
+      "version": "0.3.0",
+      "icon": "ApiIcon",
+      "category": "docs",
+      "repo": "sample-dev/api-reference",
+      "commit": "0cc2c72e171351d5821dcb3367c476ba9d36f9c6",
+      "path": "."
+    },
+    {
+      "name": "bug-bash",
+      "title": "Bug bash",
+      "summary": "Runs a short testing round and files what it finds",
+      "author": "Example Org",
+      "version": "0.1.0",
+      "icon": "Bug01Icon",
+      "category": "feedback-testing",
+      "needs": {
+        "connections": [
+          "github"
+        ]
+      },
+      "screens": [
+        {
+          "id": "round",
+          "place": "project-tab",
+          "title": "Bug bash",
+          "icon": "Bug01Icon",
+          "entry": "screens/round/index.html"
+        }
+      ],
+      "can": {
+        "send_briefs": true,
+        "storage": true,
+        "inbox": "read"
+      },
+      "repo": "example-org/araniko-plugins-pack",
+      "commit": "4dfb7b42036e9a64d5bc0e943ce8988746fe7aaf",
+      "path": "bug-bash"
+    },
+    {
+      "name": "docs-folder",
+      "title": "Docs folder",
+      "summary": "Keeps a plain-words guide to the project in a docs folder",
+      "author": "Araniko team",
+      "version": "1.0.0",
+      "icon": "Folder01Icon",
+      "category": "docs",
+      "repo": "example-org/docs-folder",
+      "commit": "d7d4da9c35836c290f48f356774ef637af11f4d6",
+      "path": "."
+    },
+    {
+      "name": "launch-checklist",
+      "title": "Launch checklist",
+      "summary": "Checks a project over before you ship it",
+      "author": "Araniko team",
+      "version": "1.2.0",
+      "icon": "CheckmarkSquare02Icon",
+      "category": "feedback-testing",
+      "repo": "example-org/launch-checklist",
+      "commit": "9603515a67612d059375a3afe8ede2beed5d6458",
+      "path": "."
+    },
+    {
+      "name": "release-notes",
+      "title": "Release notes",
+      "summary": "Writes release notes from the work Nayo merged since the last version",
+      "author": "Araniko team",
+      "version": "0.4.1",
+      "icon": "Book02Icon",
+      "category": "shipping",
+      "needs": {
+        "araniko": ">=0.9.0",
+        "connections": [
+          "github"
+        ]
+      },
+      "settings": [
+        {
+          "key": "tone",
+          "label": "Tone",
+          "type": "choice",
+          "options": [
+            "Plain",
+            "Friendly"
+          ],
+          "default": "Plain"
+        }
+      ],
+      "repo": "example-org/release-notes",
+      "commit": "f55ce9c36bf6d4442ed4dac872b9222b865c29ae",
+      "path": "."
+    },
+    {
+      "name": "store-listing",
+      "title": "Store listing",
+      "summary": "Drafts the App Store text and screenshots list for a release",
+      "author": "Example Org",
+      "version": "0.2.0",
+      "icon": "Store01Icon",
+      "category": "shipping",
+      "repo": "example-org/araniko-plugins-pack",
+      "commit": "e849cd9feec4ac30992dc7b0b782ab054036a49a",
+      "path": "store-listing"
+    }
+  ]
+}

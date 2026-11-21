@@ -1,0 +1,16 @@
+name: second
+title: Second
+summary: Lives in a folder inside a bigger repo
+author: Test
+version: 1.0.0
+icon: Folder01Icon
+category: docs
+screens:
+  - id: main
+    place: project-tab
+    title: Second
+    icon: Folder01Icon
+    entry: screens/main/index.html
+can:
+  storage: true
+  reach: [api.example.com]
