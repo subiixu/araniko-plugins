@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795251616,
+  "generated_at": 1795514937,
   "categories": [
     {
       "id": "feedback-testing",
@@ -18,5 +18,35 @@
       "order": 3
     }
   ],
-  "plugins": []
+  "plugins": [
+    {
+      "name": "namlo",
+      "title": "Namlo",
+      "summary": "A feedback button for your app. Send bugs and requests straight to Nayo",
+      "author": "namlo",
+      "version": "0.7.0",
+      "icon": "BubbleChatIcon",
+      "logo": "templates/logo.png",
+      "category": "feedback-testing",
+      "screens": [
+        {
+          "id": "feedback",
+          "place": "project-tab",
+          "title": "Feedback",
+          "icon": "BubbleChatIcon",
+          "entry": "screens/feedback/index.html"
+        }
+      ],
+      "can": {
+        "send_briefs": true,
+        "storage": true,
+        "reach": [
+          "namlo-api.subaz.workers.dev"
+        ]
+      },
+      "repo": "subiixu/namlo",
+      "commit": "cba43bb27bd76a32fb0a50a053e5d28a5287d220",
+      "path": "."
+    }
+  ]
 }
