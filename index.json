@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795783678,
+  "generated_at": 1795796834,
   "categories": [
     {
       "id": "feedback-testing",
@@ -101,12 +101,13 @@
       "path": "preflight"
     },
     {
-      "name": "scratch",
-      "title": "Scratch",
-      "summary": "Draw or mark up a screenshot and send it to Nayo",
+      "name": "sumi",
+      "title": "Sumi",
+      "summary": "Sketch ideas, annotate screenshots, and send them straight to Nayo.",
       "author": "Araniko team",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "icon": "PaintBoardIcon",
+      "logo": "logo.png",
       "category": "feedback-testing",
       "needs": {
         "araniko": ">=2.16.0"
@@ -115,16 +116,16 @@
         {
           "id": "page",
           "place": "sidebar-page",
-          "title": "Scratch",
+          "title": "Sumi",
           "icon": "PaintBoardIcon",
-          "entry": "screens/scratch/index.html"
+          "entry": "screens/sumi/index.html"
         },
         {
           "id": "sheet",
           "place": "project-topbar-button",
-          "title": "Scratch",
+          "title": "Sumi",
           "icon": "PaintBoardIcon",
-          "entry": "screens/scratch/index.html"
+          "entry": "screens/sumi/index.html"
         }
       ],
       "can": {
@@ -132,8 +133,8 @@
         "send_pictures": true,
         "storage": true
       },
-      "repo": "subiixu/scratch",
-      "commit": "04ffb829aa0ebaea87afd605ee0f1375b9f67852",
+      "repo": "subiixu/sumi",
+      "commit": "e9f480955010df2b3774c72676ef0a2207acb2dd",
       "path": "."
     }
   ]
