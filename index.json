@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795781752,
+  "generated_at": 1795783678,
   "categories": [
     {
       "id": "feedback-testing",
@@ -99,6 +99,42 @@
       "repo": "subiixu/preflight",
       "commit": "cd1a189c182981ad754b16aef034d66e7d92d28c",
       "path": "preflight"
+    },
+    {
+      "name": "scratch",
+      "title": "Scratch",
+      "summary": "Draw or mark up a screenshot and send it to Nayo",
+      "author": "Araniko team",
+      "version": "0.1.2",
+      "icon": "PaintBoardIcon",
+      "category": "feedback-testing",
+      "needs": {
+        "araniko": ">=2.16.0"
+      },
+      "screens": [
+        {
+          "id": "page",
+          "place": "sidebar-page",
+          "title": "Scratch",
+          "icon": "PaintBoardIcon",
+          "entry": "screens/scratch/index.html"
+        },
+        {
+          "id": "sheet",
+          "place": "project-topbar-button",
+          "title": "Scratch",
+          "icon": "PaintBoardIcon",
+          "entry": "screens/scratch/index.html"
+        }
+      ],
+      "can": {
+        "send_briefs": true,
+        "send_pictures": true,
+        "storage": true
+      },
+      "repo": "subiixu/scratch",
+      "commit": "04ffb829aa0ebaea87afd605ee0f1375b9f67852",
+      "path": "."
     }
   ]
 }
