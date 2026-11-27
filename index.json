@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795514937,
+  "generated_at": 1795760436,
   "categories": [
     {
       "id": "feedback-testing",
@@ -47,6 +47,56 @@
       "repo": "subiixu/namlo",
       "commit": "cba43bb27bd76a32fb0a50a053e5d28a5287d220",
       "path": "."
+    },
+    {
+      "name": "preflight",
+      "title": "Preflight",
+      "summary": "Checks your whole app before launch, then says if you're cleared to ship",
+      "author": "Subaz",
+      "version": "0.1.0",
+      "icon": "AirplaneTakeOff01Icon",
+      "category": "feedback-testing",
+      "needs": {
+        "araniko": ">=2.16.0"
+      },
+      "settings": [
+        {
+          "key": "audience",
+          "label": "Who will use it",
+          "type": "choice",
+          "options": [
+            "Just me and my team",
+            "The public"
+          ],
+          "default": "The public"
+        },
+        {
+          "key": "depth",
+          "label": "How deep to check",
+          "type": "choice",
+          "options": [
+            "Quick",
+            "Thorough"
+          ],
+          "default": "Thorough"
+        }
+      ],
+      "screens": [
+        {
+          "id": "preflight",
+          "place": "project-tab",
+          "title": "Preflight",
+          "icon": "AirplaneTakeOff01Icon",
+          "entry": "screens/preflight/index.html"
+        }
+      ],
+      "can": {
+        "send_briefs": true,
+        "storage": true
+      },
+      "repo": "subiixu/preflight",
+      "commit": "7067782b39f7fca21046450ed972d98eb6409317",
+      "path": "preflight"
     }
   ]
 }
