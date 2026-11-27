@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795761807,
+  "generated_at": 1795763535,
   "categories": [
     {
       "id": "feedback-testing",
@@ -53,10 +53,13 @@
       "title": "Preflight",
       "summary": "Checks your whole app before launch, then says if you're cleared to ship",
       "author": "Subaz",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "icon": "AirplaneTakeOff01Icon",
       "logo": "logo.svg",
       "category": "feedback-testing",
+      "needs": {
+        "araniko": ">=2.17.1"
+      },
       "settings": [
         {
           "key": "audience",
@@ -93,7 +96,7 @@
         "storage": true
       },
       "repo": "subiixu/preflight",
-      "commit": "05d2397a9c4f29130d3e9675695a30bbbce5561c",
+      "commit": "e05f60ab13250a49979d89f3d3b4093138b6cff3",
       "path": "preflight"
     }
   ]
