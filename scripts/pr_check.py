@@ -41,6 +41,7 @@ CAN_LABELS = {
     "send_briefs": "Send briefs to the project's Nayo",
     "storage": "Keep its own storage on the Mac",
     "inbox": "Inbox",
+    "ask": "Ask a small model short questions, on this project's agent account",
 }
 
 
