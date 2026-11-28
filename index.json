@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795835814,
+  "generated_at": 1795839901,
   "categories": [
     {
       "id": "feedback-testing",
@@ -99,6 +99,115 @@
       "repo": "subiixu/preflight",
       "commit": "25db65341884490efba02149bba15250621e000a",
       "path": "preflight"
+    },
+    {
+      "name": "shout",
+      "title": "Shout",
+      "summary": "Turns a finished feature into posts, store text and screenshots to share",
+      "author": "Araniko team",
+      "version": "0.1.0",
+      "icon": "Megaphone01Icon",
+      "category": "shipping",
+      "needs": {
+        "araniko": ">=2.21.0"
+      },
+      "settings": [
+        {
+          "key": "voice",
+          "label": "Voice",
+          "type": "choice",
+          "options": [
+            "Plain",
+            "Playful",
+            "Professional"
+          ],
+          "default": "Plain"
+        },
+        {
+          "key": "audience",
+          "label": "Who it's for",
+          "type": "text",
+          "default": ""
+        },
+        {
+          "key": "x",
+          "label": "Post for X",
+          "type": "choice",
+          "options": [
+            "Include",
+            "Skip"
+          ],
+          "default": "Include"
+        },
+        {
+          "key": "linkedin",
+          "label": "Post for LinkedIn",
+          "type": "choice",
+          "options": [
+            "Include",
+            "Skip"
+          ],
+          "default": "Include"
+        },
+        {
+          "key": "instagram",
+          "label": "Instagram caption",
+          "type": "choice",
+          "options": [
+            "Include",
+            "Skip"
+          ],
+          "default": "Include"
+        },
+        {
+          "key": "stores",
+          "label": "App Store and Google Play text",
+          "type": "choice",
+          "options": [
+            "When the app is on a store",
+            "Never"
+          ],
+          "default": "When the app is on a store"
+        },
+        {
+          "key": "landing",
+          "label": "Landing page section",
+          "type": "choice",
+          "options": [
+            "Include",
+            "Skip"
+          ],
+          "default": "Skip"
+        },
+        {
+          "key": "screenshots",
+          "label": "Screenshots",
+          "type": "choice",
+          "options": [
+            "Include",
+            "Skip"
+          ],
+          "default": "Include"
+        }
+      ],
+      "screens": [
+        {
+          "id": "shout",
+          "place": "project-tab",
+          "title": "Shout",
+          "icon": "Megaphone01Icon",
+          "entry": "screens/shout/index.html"
+        }
+      ],
+      "can": {
+        "send_briefs": true,
+        "storage": true,
+        "inbox": "read",
+        "files": "read"
+      },
+      "repo": "subiixu/shout",
+      "commit": "654716f12f45c8e0707eebc2ed56111df0842bab",
+      "path": "."
     },
     {
       "name": "sumi",
