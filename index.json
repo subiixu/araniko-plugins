@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795839938,
+  "generated_at": 1795857592,
   "categories": [
     {
       "id": "planning",
@@ -249,12 +249,12 @@
       "title": "Sumi",
       "summary": "Sketch ideas, annotate screenshots, and send them straight to Nayo.",
       "author": "Araniko team",
-      "version": "0.3.1",
+      "version": "0.4.0",
       "icon": "PaintBoardIcon",
       "logo": "logo.png",
       "category": "feedback-testing",
       "needs": {
-        "araniko": ">=2.20.0"
+        "araniko": ">=2.22.0"
       },
       "screens": [
         {
@@ -262,7 +262,8 @@
           "place": "sidebar-page",
           "title": "Sumi",
           "icon": "PaintBoardIcon",
-          "entry": "screens/sumi/index.html"
+          "entry": "screens/sumi/index.html",
+          "picker": "screen"
         },
         {
           "id": "sheet",
@@ -278,7 +279,7 @@
         "storage": true
       },
       "repo": "subiixu/sumi",
-      "commit": "63bd72827794f6ce19302ad3f02d0f5b2a4e7cc8",
+      "commit": "92af6ae16c8b4cb7a26c6346a15ef9d9f2e48f41",
       "path": "."
     }
   ]
