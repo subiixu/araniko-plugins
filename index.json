@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795857592,
+  "generated_at": 1795878680,
   "categories": [
     {
       "id": "planning",
@@ -249,9 +249,19 @@
       "title": "Sumi",
       "summary": "Sketch ideas, annotate screenshots, and send them straight to Nayo.",
       "author": "Araniko team",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "icon": "PaintBoardIcon",
       "logo": "logo.png",
+      "screenshots": [
+        {
+          "file": "screenshots/board.png",
+          "alt": "Sumi's board with a sketch of a phone screen, an arrow and a note, ready to send to Nayo"
+        },
+        {
+          "file": "screenshots/annotated.png",
+          "alt": "A pasted screenshot of Araniko's Home marked up in Sumi with a red box, an arrow and a label"
+        }
+      ],
       "category": "feedback-testing",
       "needs": {
         "araniko": ">=2.22.0"
@@ -279,7 +289,7 @@
         "storage": true
       },
       "repo": "subiixu/sumi",
-      "commit": "92af6ae16c8b4cb7a26c6346a15ef9d9f2e48f41",
+      "commit": "ec33c6b6ee6b83ce482726bd7133093d66361575",
       "path": "."
     }
   ]
