@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795839915,
+  "generated_at": 1795839938,
   "categories": [
     {
       "id": "planning",
@@ -24,6 +24,36 @@
     }
   ],
   "plugins": [
+    {
+      "name": "idea-build",
+      "title": "Idea Build",
+      "summary": "Turns a rough idea into a clear brief for Nayo, with a few quick questions.",
+      "author": "Araniko team",
+      "version": "0.1.0",
+      "icon": "Idea01Icon",
+      "category": "planning",
+      "needs": {
+        "araniko": ">=2.21.0"
+      },
+      "screens": [
+        {
+          "id": "idea",
+          "place": "project-tab",
+          "title": "Idea Build",
+          "icon": "Idea01Icon",
+          "entry": "screens/idea-build/index.html"
+        }
+      ],
+      "can": {
+        "send_briefs": true,
+        "storage": true,
+        "files": "read",
+        "ask": true
+      },
+      "repo": "subiixu/idea-build",
+      "commit": "d2399efcc52c2914e9fd0335c6510bc590921b3f",
+      "path": "."
+    },
     {
       "name": "namlo",
       "title": "Namlo",
