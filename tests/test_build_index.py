@@ -62,6 +62,7 @@ class BuildIndexTest(unittest.TestCase):
         self.assertEqual(good["repo"], "example/good")
         self.assertEqual(good["path"], ".")
         self.assertEqual(good["settings"][0]["options"], ["Plain", "Friendly"])
+        self.assertEqual(good["screenshots"], [{"file": "screenshots/one.png", "alt": "The first screen: a list"}])
         self.assertEqual(second["path"], "second")
         self.assertEqual(second["can"], {"storage": True, "reach": ["api.example.com"]})
         self.assertEqual(second["screens"][0]["place"], "project-tab")

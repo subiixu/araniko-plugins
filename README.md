@@ -15,6 +15,9 @@ my-plugin/
   update.md     optional; what to do in a project when the plugin is updated
   skills/       optional; agent skills
   templates/    optional; files the instructions can copy into the project
+  screens/      optional; the plugin's own screens
+  logo.png      optional; the picture `logo:` names
+  screenshots/  optional; the pictures `screenshots:` names
 ```
 
 `on.md`, `off.md` and `update.md` are instructions for the project's agent, written in plain words. Araniko sends them to the agent when someone turns your plugin on, takes it out, or updates it.
@@ -28,7 +31,11 @@ summary: Checks a project over before you ship it   # one line, up to 90 charact
 author: Your name
 version: 0.1.0               # major.minor.patch
 icon: CheckmarkSquare02Icon  # a Hugeicons name
+logo: logo.png               # optional; your own picture for its tile
 category: shipping           # one of the ids in categories.yaml
+screenshots:                 # optional; up to 4
+  - file: screenshots/notes.png
+    alt: Release notes drafted from this week's merged work
 needs:                       # optional
   araniko: ">=0.9.0"         # the oldest Araniko it works with
   connections: [github]      # today only "github" (the gh login)
@@ -39,6 +46,9 @@ settings:                    # optional; up to 8
     options: [GitHub issues]
     default: GitHub issues
 ```
+
+- **`logo`:** optional. A PNG, JPEG, WebP or SVG in the folder, 256 KB or smaller. Araniko shows `icon:` until the picture loads, and instead of it if the file is missing or broken, so keep a good `icon:` too.
+- **`screenshots`:** optional. Up to 4 PNG or JPEG pictures in the folder, 1 MB or smaller each; a `screenshots/` folder keeps them tidy. Each has a `file` and an `alt`: one line, up to 140 characters, saying what the picture shows. They're shown on the plugin's page on araniko.dev; Araniko itself doesn't show them yet. A missing or bad screenshot fails the check.
 
 Plugins with their own screens also have `screens:` (where they show up in the app) and `can:` (everything those screens may do, such as `reach: [api.github.com]` for the websites they talk to). Leave `can:` out and the plugin can do nothing beyond its instructions.
 
@@ -51,7 +61,9 @@ araniko plugin new my-plugin     # makes the folder with every file it needs
 araniko plugin check my-plugin   # tells you what's missing or wrong
 ```
 
-To use it yourself without listing it, open Plugins in Araniko, choose **Add your own**, and pick the folder on your Mac or its GitHub repository. Plugins you add this way stay private to you and your team.
+To try it, open Plugins in Araniko and choose **Add from a folder**.
+
+**Privately:** to share a plugin only with people you choose, give them the folder (a zip, a shared drive or a private repository they can clone). They add it with Plugins, **Add from a folder**. There's no other way to add a private plugin.
 
 ## Get listed
 
