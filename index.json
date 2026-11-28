@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": 1795830882,
+  "generated_at": 1795835814,
   "categories": [
     {
       "id": "feedback-testing",
@@ -105,12 +105,12 @@
       "title": "Sumi",
       "summary": "Sketch ideas, annotate screenshots, and send them straight to Nayo.",
       "author": "Araniko team",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "icon": "PaintBoardIcon",
       "logo": "logo.png",
       "category": "feedback-testing",
       "needs": {
-        "araniko": ">=2.16.0"
+        "araniko": ">=2.20.0"
       },
       "screens": [
         {
@@ -134,7 +134,7 @@
         "storage": true
       },
       "repo": "subiixu/sumi",
-      "commit": "49f875dd2eda1bf1bcfe6f49e686e329a5fec861",
+      "commit": "63bd72827794f6ce19302ad3f02d0f5b2a4e7cc8",
       "path": "."
     }
   ]
