@@ -5,6 +5,9 @@ author: Test
 version: 0.1.0
 icon: CheckmarkSquare02Icon
 category: shipping
+screenshots:
+  - file: screenshots/one.png
+    alt: "The first screen: a list"
 needs:
   connections: [github]
 settings:

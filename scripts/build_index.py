@@ -2,7 +2,10 @@
 """Builds index.json from plugins/<name>.yaml and categories.yaml.
 
 For each entry it downloads https://codeload.github.com/<repo>/tar.gz/<commit>,
-reads <path>/plugin.yaml and writes one index.json the app fetches.
+reads <path>/plugin.yaml and writes one index.json the app fetches. Every key in
+plugin.yaml is copied as it is (including optional ones such as `logo` and
+`screenshots: [{file, alt}]`, which the website's plugin pages read), plus
+repo, commit and path from the entry.
 
     python3 scripts/build_index.py                  # writes ./index.json
     python3 scripts/build_index.py --out /tmp/i.json
