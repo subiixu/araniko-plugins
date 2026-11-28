@@ -1,21 +1,26 @@
 {
   "version": 1,
-  "generated_at": 1795839901,
+  "generated_at": 1795839915,
   "categories": [
+    {
+      "id": "planning",
+      "title": "Planning",
+      "order": 1
+    },
     {
       "id": "feedback-testing",
       "title": "Feedback and testing",
-      "order": 1
+      "order": 2
     },
     {
       "id": "shipping",
       "title": "Shipping",
-      "order": 2
+      "order": 3
     },
     {
       "id": "docs",
       "title": "Docs",
-      "order": 3
+      "order": 4
     }
   ],
   "plugins": [
